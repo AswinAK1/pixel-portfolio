@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #F7EFE5;
+    --bg-beige: #EFE3C8;
+    --surface-sand: #DFD3C3;
+    --surface-linen: #D0B8A8;
+    --accent-toffee: #A67B5B;
+    --accent-caramel: #8B5E3C;
+    --text-espresso: #3C2A21;
+    --text-walnut: #1E120B;
+    --snake-green: #708238;
+    --snake-green-light: #8BA848;
+    --pixel-gold: #E0A96D;
+    --brick-red: #A04747;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-espresso);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    image-rendering: pixelated;
+  }
+}
+
+/* 8-Bit Font Classes */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-silkscreen {
+  font-family: 'Silkscreen', monospace;
+}
+
+.font-retro {
+  font-family: 'VT323', monospace;
+}
+
+.font-courier {
+  font-family: 'Courier Prime', monospace;
+}
+
+/* Translucent 8-Bit Stepped Pixel Borders and Shadows */
+.pixel-card {
+  background-color: rgba(223, 211, 195, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3px solid #3C2A21;
+  box-shadow: 4px 4px 0px #3C2A21;
+  position: relative;
+}
+
+.pixel-card-gold {
+  background-color: rgba(247, 239, 229, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3px solid #8B5E3C;
+  box-shadow: 4px 4px 0px #3C2A21;
+}
+
+.pixel-card-subtle {
+  background-color: rgba(239, 227, 200, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 2px solid #8B5E3C;
+  box-shadow: 3px 3px 0px #3C2A21;
+}
+
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  background-color: rgba(223, 211, 195, 0.85);
+  backdrop-filter: blur(4px);
+  color: #1E120B;
+  border: 3px solid #3C2A21;
+  box-shadow: 3px 3px 0px #3C2A21;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  user-select: none;
+}
+
+.pixel-btn:hover {
+  background-color: rgba(239, 227, 200, 0.95);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #1E120B;
+}
+
+.pixel-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #3C2A21;
+}
+
+.pixel-btn-primary {
+  background-color: #A67B5B;
+  color: #F7EFE5;
+  border-color: #1E120B;
+}
+
+.pixel-btn-primary:hover {
+  background-color: #8B5E3C;
+  color: #FFFFFF;
+}
+
+.pixel-btn-gold {
+  background-color: #E0A96D;
+  color: #1E120B;
+}
+
+.pixel-btn-gold:hover {
+  background-color: #ECC088;
+}
+
+.pixel-btn-green {
+  background-color: #708238;
+  color: #FFFFFF;
+}
+
+.pixel-btn-green:hover {
+  background-color: #839744;
+}
+
+/* Pixel Badge & Tag */
+.pixel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background-color: rgba(239, 227, 200, 0.85);
+  color: #3C2A21;
+  border: 2px solid #8B5E3C;
+  box-shadow: 2px 2px 0px #3C2A21;
+}
+
+/* Pixel Corner Cut Decoration */
+.pixel-corners {
+  clip-path: polygon(
+    0 6px, 6px 6px, 6px 0,
+    calc(100% - 6px) 0, calc(100% - 6px) 6px, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) calc(100% - 6px), calc(100% - 6px) 100%,
+    6px 100%, 6px calc(100% - 6px), 0 calc(100% - 6px)
+  );
+}
+
+/* Custom Pixel Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFE3C8;
+  border-left: 2px solid #3C2A21;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A67B5B;
+  border: 2px solid #3C2A21;
+  box-shadow: inset 1px 1px 0px #DFD3C3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5E3C;
+}
+
+/* CRT / Scanlines subtle overlay */
+.scanlines-subtle {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.03) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.01),
+    rgba(0, 255, 0, 0.005),
+    rgba(0, 0, 255, 0.01)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* Pixel Blink Animation */
+@keyframes pixel-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-pixel-blink {
+  animation: pixel-blink 1s infinite;
+}
+
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-pixel-float {
+  animation: pixel-float 2.5s ease-in-out infinite;
+}
+
+@keyframes pixel-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(14deg); }
+}
+
+.animate-pixel-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: pixel-wave 2s infinite ease-in-out;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Aswin AK - 8-Bit Pixel Portfolio & Retro Snake",
+  "description": "Cozy Beige & Brown 8-bit retro pixel developer portfolio for Aswin A K featuring an interactive playable background Snake game.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
